@@ -407,6 +407,8 @@ Configuration Example
           port: 8098
           #verify_ssl_cert: true
 
+      postfix: {}
+
     Daemon:
       user: newrelic
       pidfile: /var/run/newrelic/newrelic-plugin-agent.pid
