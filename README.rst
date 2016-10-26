@@ -19,6 +19,7 @@ NewRelic platform. Currently supported backend systems are:
 - Redis
 - Riak
 - uWSGI
+- Postfix
 
 Base Requirements
 -----------------
@@ -256,6 +257,11 @@ The UWSGI plugin can communicate either over UNIX domain sockets using the path 
 
 Make sure you have `enabled stats server 
 <http://uwsgi-docs.readthedocs.org/en/latest/StatsServer.html>`_ in your uwsgi config.
+
+Postfix Installation Notes
+------------------------
+
+The Postfix plugin needs root permissions to find and read the Postfix queue directory to monitor queue sizes, so you must install the newrelic-plugin-agent as root to use the Postfix plugin
 
 Configuration Example
 ---------------------
