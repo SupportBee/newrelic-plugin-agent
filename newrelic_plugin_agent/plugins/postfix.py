@@ -17,12 +17,12 @@ class Postfix(base.Plugin):
 
     def poll(self):
         try:
-            self.add_gauge_value("Postfix/DeferredQueueSize", None, self.queue_size("deferred")) 
-            self.add_gauge_value("Postfix/BounceQueueSize", None, self.queue_size("bounce")) 
-            self.add_gauge_value("Postfix/HoldQueueSize", None, self.queue_size("hold"))
-            self.add_gauge_value("Postfix/CorruptQueueSize", None, self.queue_size("corrupt"))
-            self.add_gauge_value("Postfix/IncomingQueueSize", None, self.queue_size("incoming"))
-            self.add_gauge_value("Postfix/ActiveQueueSize", None, self.queue_size("active")) 
+            self.add_gauge_value("Postfix/DeferredQueueSize", "messages", self.queue_size("deferred")) 
+            self.add_gauge_value("Postfix/BounceQueueSize", "messages", self.queue_size("bounce")) 
+            self.add_gauge_value("Postfix/HoldQueueSize", "messages", self.queue_size("hold"))
+            self.add_gauge_value("Postfix/CorruptQueueSize", "messages", self.queue_size("corrupt"))
+            self.add_gauge_value("Postfix/IncomingQueueSize", "messages", self.queue_size("incoming"))
+            self.add_gauge_value("Postfix/ActiveQueueSize", "messages", self.queue_size("active")) 
 
             self.finish()
         except ShellCommandFailed as e:
